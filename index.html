@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nafiz Imtiaz — Software Engineer</title>
+<meta name="description" content="Software engineer at Dell Technologies building agentic AI platforms, backend systems, and ML infrastructure for enterprise storage." />
+<meta name="theme-color" content="#fafafa" />
+<meta property="og:title" content="Nafiz Imtiaz — Software Engineer" />
+<meta property="og:description" content="I build the infrastructure that keeps AI agents alive in production." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111'/><text y='68' x='50' text-anchor='middle' font-size='54' font-family='Georgia,serif' fill='%23fafafa'>N</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#fafafa; --panel:#ffffff; --ink:#141414; --muted:#5f5f5f; --faint:#8a8a8a;
+  --line:#e6e4e0; --accent:#1a5c4a; --accent-soft:#eef4f1; --chip:#f2f1ee;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --maxw:720px;
+}
+html[data-theme="dark"]{
+  --bg:#0f0f0f; --panel:#151515; --ink:#ececec; --muted:#a0a0a0; --faint:#767676;
+  --line:#262626; --accent:#7fd1b3; --accent-soft:#14231e; --chip:#1c1c1c;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{
+  margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:8px;z-index:99}
+.skip:focus{left:12px;top:12px}
+
+/* ---------- nav ---------- */
+header{
+  position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(12px);
+  background:color-mix(in srgb,var(--bg) 82%,transparent);
+  border-bottom:1px solid transparent;transition:border-color .25s ease;
+}
+header.scrolled{border-bottom-color:var(--line)}
+.nav{max-width:var(--maxw);margin:0 auto;padding:16px 24px;display:flex;align-items:center;gap:24px}
+.brand{font-family:var(--serif);font-size:18px;letter-spacing:-.01em;text-decoration:none;font-weight:500;white-space:nowrap}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav a.link{
+  text-decoration:none;font-size:14px;color:var(--muted);position:relative;padding-bottom:2px;transition:color .18s ease;
+}
+.nav a.link:hover{color:var(--ink)}
+.nav a.link.active{color:var(--ink)}
+.nav a.link.active::after{
+  content:"";position:absolute;left:0;right:0;bottom:-2px;height:1.5px;background:var(--accent);
+}
+.toggle{
+  margin-left:4px;background:none;border:1px solid var(--line);border-radius:999px;color:var(--muted);
+  width:32px;height:32px;display:grid;place-items:center;cursor:pointer;flex:none;transition:.18s ease;
+}
+.toggle:hover{color:var(--ink);border-color:var(--ink)}
+@media(max-width:640px){
+  .nav{gap:14px;padding:14px 20px;flex-wrap:wrap}
+  .nav ul{gap:16px;margin-left:auto;order:3;width:100%;justify-content:flex-start;padding-top:4px;overflow-x:auto}
+  .nav a.link{font-size:13px}
+}
+
+/* ---------- layout ---------- */
+main{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{padding:64px 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:none}
+h2{
+  font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);margin:0 0 28px;
+}
+
+/* ---------- hero ---------- */
+.hero{padding:80px 0 64px}
+.hero h1{
+  font-family:var(--serif);font-weight:400;font-size:clamp(30px,5.4vw,44px);line-height:1.22;
+  letter-spacing:-.02em;margin:0 0 26px;text-wrap:balance;
+}
+.hero p{color:var(--muted);margin:0 0 16px;font-size:17px;max-width:60ch}
+.hero p strong{color:var(--ink);font-weight:500}
+.hero .meta{font-size:14px;color:var(--faint);display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:26px}
+.hero .meta span{display:inline-flex;align-items:center;gap:7px}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--accent);display:inline-block}
+.avail{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--accent);
+  background:var(--accent-soft);border-radius:999px;padding:5px 12px;margin-bottom:26px;
+}
+.pulse{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
+
+/* ---------- experience ---------- */
+.job{display:block;padding:22px 0;border-bottom:1px solid var(--line)}
+.job:last-child{border-bottom:none;padding-bottom:0}
+.job-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin-bottom:4px}
+.job-head h3{font-size:16px;font-weight:600;margin:0;letter-spacing:-.01em}
+.job-head .role{font-size:15px;color:var(--muted)}
+.job-head .date{margin-left:auto;font-family:var(--mono);font-size:12.5px;color:var(--faint);white-space:nowrap}
+.job ul{margin:12px 0 0;padding:0;list-style:none}
+.job li{position:relative;padding-left:18px;color:var(--muted);font-size:15px;margin-bottom:9px}
+.job li::before{content:"";position:absolute;left:2px;top:10px;width:5px;height:1.5px;background:var(--faint)}
+.job li b{color:var(--ink);font-weight:500}
+@media(max-width:640px){.job-head .date{margin-left:0;width:100%}}
+
+/* ---------- projects ---------- */
+.projects{display:grid;gap:16px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;
+  transition:border-color .2s ease,transform .2s ease;
+}
+.card:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line));transform:translateY(-2px)}
+.card-head{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+.card h3{margin:0;font-size:16px;font-weight:600;letter-spacing:-.01em}
+.card .date{margin-left:auto;font-family:var(--mono);font-size:12.5px;color:var(--faint)}
+.card p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{
+  font-family:var(--mono);font-size:11.5px;color:var(--muted);background:var(--chip);
+  border-radius:6px;padding:3px 8px;
+}
+
+/* ---------- skills ---------- */
+.skills{display:grid;gap:20px}
+.skillrow h4{
+  margin:0 0 9px;font-size:13px;font-weight:600;color:var(--ink);letter-spacing:.01em;
+}
+.skillrow .tags .tag{background:transparent;border:1px solid var(--line);color:var(--muted)}
+
+/* ---------- contact ---------- */
+.contact p{color:var(--muted);margin:0 0 24px;font-size:17px;max-width:56ch}
+.contact p a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:14px;
+  border:1px solid var(--line);border-radius:10px;padding:9px 14px;color:var(--ink);
+  background:var(--panel);transition:.18s ease;
+}
+.btn:hover{border-color:var(--ink);transform:translateY(-1px)}
+.btn svg{width:15px;height:15px;fill:currentColor;opacity:.75}
+
+footer{
+  max-width:var(--maxw);margin:0 auto;padding:28px 24px 48px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:13px;color:var(--faint);
+}
+footer .built{margin-left:auto}
+
+/* ---------- entrance ---------- */
+.reveal{opacity:0;transform:translateY(12px)}
+.reveal.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.3,1)}
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal.in{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .pulse{animation:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header id="site-header">
+  <nav class="nav" aria-label="Primary">
+    <a class="brand" href="#top">Nafiz Imtiaz</a>
+    <ul>
+      <li><a class="link" href="#top">Home</a></li>
+      <li><a class="link" href="#experience">Experience</a></li>
+      <li><a class="link" href="#projects">Projects</a></li>
+      <li><a class="link" href="#stack">Stack</a></li>
+      <li><a class="link" href="#contact">Contact</a></li>
+    </ul>
+    <button class="toggle" id="theme" type="button" aria-label="Toggle dark mode">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path id="icon-path" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <span class="avail"><span class="pulse"></span> Austin, TX · Software Engineer 2 at Dell</span>
+    <h1>I build the infrastructure that keeps AI agents alive in production.</h1>
+    <p>Most agent demos die the moment they meet real systems. My work is the unglamorous part that makes them survive: <strong>durable orchestration, retrieval that stays fast at scale, event pipelines that don't drop messages, and evaluation harnesses that catch failures before customers do.</strong></p>
+    <p>I'm a software engineer on Dell's Automation Platform Engineering team, where I shipped a 0-to-1 agentic AI platform for enterprise storage that cut task completion time by 70% and now backs workflows across 27+ engineering pods.</p>
+    <div class="meta">
+      <span><span class="dot"></span> Python · Go · Java</span>
+      <span><span class="dot"></span> LangGraph · MCP · A2A</span>
+      <span><span class="dot"></span> Kubernetes · AWS · Azure</span>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <article class="job reveal">
+      <div class="job-head">
+        <h3>Dell Technologies</h3>
+        <span class="role">Software Engineer 2, Automation Platform Engineering</span>
+        <span class="date">Feb 2026 — Present</span>
+      </div>
+      <ul>
+        <li>Shipped a <b>0-to-1 agentic AI platform</b> using LlamaIndex ReAct, Claude on Bedrock, and A2A — automating storage maintenance and cutting <b>task completion time by 70%</b>. Demoed at Dell Technologies World by Dell's ISG President.</li>
+        <li>Designed <b>multi-step LangGraph agent orchestration</b> with stateful memory and human-in-the-loop checkpoints, using MCP servers for credential rotation, diagnostics, and provisioning across multi-tenant Azure Kubernetes.</li>
+        <li>Built a production <b>RAG system over 200+ documents</b> with chunking, embedding, and indexing — cut repeat-query P95 latency by <b>83% (2.4s → 400ms)</b> with Redis caching.</li>
+        <li>Architected an <b>event-driven ingestion pipeline</b> in RabbitMQ handling <b>1.2M+ messages daily</b> with priority routing, backpressure, and idempotent delivery.</li>
+        <li>Drove org-wide adoption of <b>Spec-Driven Development with AI agents</b> across 27+ pods, cutting implementation time by <b>50%</b>.</li>
+      </ul>
+    </article>
+
+    <article class="job reveal">
+      <div class="job-head">
+        <h3>Dell Technologies</h3>
+        <span class="role">Software Engineer 1, Data Platform and Research</span>
+        <span class="date">Jul 2024 — Jan 2026</span>
+      </div>
+      <ul>
+        <li>Contributed to the <b>Dataset Interface (patent pending)</b>, integrating an enterprise AI data platform with backup and recovery services to automate AI dataset protection.</li>
+        <li>Optimized <b>Go control-plane APIs</b> with Redis caching and query tuning — <b>40% faster</b> response times, with integration contract testing for reliability.</li>
+        <li>Containerized <b>MLPerf Storage and CUDA workloads</b> into reusable Dell validation pipelines, eliminating hundreds of hours of manual environment setup.</li>
+        <li>Built <b>Spark pipelines and Python operators</b> turning raw telemetry into ML-ready features for predictive maintenance and anomaly detection.</li>
+      </ul>
+    </article>
+
+    <article class="job reveal">
+      <div class="job-head">
+        <h3>Cummins</h3>
+        <span class="role">Machine Learning Intern</span>
+        <span class="date">Aug 2023 — Nov 2023</span>
+      </div>
+      <ul>
+        <li>Built <b>ML pipelines in Python</b> forecasting regional performance, improving accuracy <b>12% over baseline to 78%</b>.</li>
+        <li>Engineered automated <b>ETL pipelines</b> for extraction, cleaning, transformation, and model-ready feature prep — cutting manual reporting effort by <b>~60%</b>.</li>
+      </ul>
+    </article>
+
+    <article class="job reveal">
+      <div class="job-head">
+        <h3>Dell Technologies</h3>
+        <span class="role">Software Engineering Intern</span>
+        <span class="date">May 2023 — Aug 2023</span>
+      </div>
+      <ul>
+        <li>Deployed <b>Cloudify on Dell infrastructure</b>, enabling one-click HA Kubernetes deployment with a production ML serving stack on KServe, TorchServe, and the NVIDIA GPU Operator.</li>
+        <li>Modeled runtime state for physical and logical resources in <b>Dgraph</b>, extending the ISGOne control-plane orchestrator to maintain digital twins of deployed systems.</li>
+      </ul>
+    </article>
+
+    <article class="job reveal">
+      <div class="job-head">
+        <h3>Texas Tech University</h3>
+        <span class="role">B.S. Computer Science, Minor in Mathematics · GPA 4.00</span>
+        <span class="date">May 2024</span>
+      </div>
+    </article>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <article class="card reveal">
+        <div class="card-head">
+          <h3>Multi-Agent Trading Simulation</h3>
+          <span class="date">Jun 2026</span>
+        </div>
+        <p>A multi-agent trading platform with RAG over historical market data, built so agents structurally cannot peek at future information during backtests. Includes a Go order-matching engine supporting price-time priority, partial fills, and idempotent trade execution.</p>
+        <div class="tags">
+          <span class="tag">LangGraph</span><span class="tag">MCP</span><span class="tag">Go</span><span class="tag">RAG</span><span class="tag">Backtesting</span>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-head">
+          <h3>Agent Cost &amp; Latency Profiler</h3>
+          <span class="date">Apr 2026</span>
+        </div>
+        <p>A harness for LangGraph workflows with tool execution, trajectory tracing, token/cost/latency profiling, and circuit breakers for runaway agent loops. Harbor-based evaluations and OpenTelemetry tracing measure task success, tool-call accuracy, and execution paths across runs.</p>
+        <div class="tags">
+          <span class="tag">LangGraph</span><span class="tag">OpenTelemetry</span><span class="tag">Evals</span><span class="tag">Observability</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="stack">
+    <h2>Stack</h2>
+    <div class="skills">
+      <div class="skillrow reveal">
+        <h4>Backend &amp; Data Systems</h4>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Go</span><span class="tag">Java</span><span class="tag">REST</span><span class="tag">gRPC</span><span class="tag">GraphQL</span><span class="tag">Microservices</span><span class="tag">Temporal</span><span class="tag">RabbitMQ</span><span class="tag">Kafka</span><span class="tag">SQL</span><span class="tag">PostgreSQL</span><span class="tag">pgvector</span><span class="tag">Redis</span><span class="tag">MongoDB</span><span class="tag">DynamoDB</span>
+        </div>
+      </div>
+      <div class="skillrow reveal">
+        <h4>AI &amp; Agentic Systems</h4>
+        <div class="tags">
+          <span class="tag">LangGraph</span><span class="tag">LlamaIndex</span><span class="tag">MCP</span><span class="tag">A2A</span><span class="tag">Agentic Harnesses</span><span class="tag">RAG</span><span class="tag">Tool Calling</span><span class="tag">Agent Memory</span><span class="tag">Human-in-the-Loop</span><span class="tag">Evals</span><span class="tag">Prompt Engineering</span><span class="tag">Hugging Face</span><span class="tag">Vector Databases</span>
+        </div>
+      </div>
+      <div class="skillrow reveal">
+        <h4>Cloud, DevOps &amp; MLOps</h4>
+        <div class="tags">
+          <span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">Helm</span><span class="tag">CI/CD</span><span class="tag">KServe</span><span class="tag">TorchServe</span><span class="tag">MLflow</span><span class="tag">Terraform</span>
+        </div>
+      </div>
+      <div class="skillrow reveal">
+        <h4>Observability &amp; ML</h4>
+        <div class="tags">
+          <span class="tag">OpenTelemetry</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Claude (Bedrock)</span><span class="tag">Spark</span><span class="tag">Scikit-learn</span><span class="tag">CUDA</span><span class="tag">MLPerf</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>If you're building agent infrastructure, distributed backends, or anything that has to work when the demo is over — I'd like to hear about it. Reach me at <a href="mailto:nafizimtiazdev@gmail.com">nafizimtiazdev@gmail.com</a>.</p>
+    <div class="links">
+      <a class="btn" href="mailto:nafizimtiazdev@gmail.com">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5Z"/></svg>
+        Email
+      </a>
+      <a class="btn" href="Nafiz_Imtiaz_Resume.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm-1 7V3.5L18.5 9H13Z"/></svg>
+        Résumé
+      </a>
+      <a class="btn" href="https://github.com/nafizcodes" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.7 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+        GitHub
+      </a>
+      <a class="btn" href="https://linkedin.com/in/nafizimtiazdev" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9Z"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn" href="tel:+15719779862">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></svg>
+        571-977-9862
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© <span id="year">2026</span> Nafiz Imtiaz</span>
+  <span class="built">Austin, TX</span>
+</footer>
+
+<script>
+(function () {
+  // theme
+  var root = document.documentElement;
+  var stored = null;
+  try { stored = localStorage.getItem('theme'); } catch (e) {}
+  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  setTheme(stored || (prefersDark ? 'dark' : 'light'));
+
+  function setTheme(t) {
+    root.setAttribute('data-theme', t);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', t === 'dark' ? '#0f0f0f' : '#fafafa');
+    var p = document.getElementById('icon-path');
+    if (p) p.setAttribute('d', t === 'dark'
+      ? 'M12 4v1m0 14v1m8-8h-1M5 12H4m13.7-5.7-.7.7M7 17l-.7.7m11.4 0-.7-.7M7 7l-.7-.7M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z'
+      : 'M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z');
+  }
+  document.getElementById('theme').addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+
+  // header border on scroll
+  var header = document.getElementById('site-header');
+  function onScroll() { header.classList.toggle('scrolled', window.scrollY > 8); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // reveal on enter
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(function (el, i) {
+    el.style.transitionDelay = (Math.min(i, 4) * 45) + 'ms';
+    io.observe(el);
+  });
+
+  // active nav link
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a.link'));
+  var sections = links.map(function (l) { return document.querySelector(l.getAttribute('href')); });
+  var spy = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      links.forEach(function (l) { l.classList.remove('active'); });
+      var idx = sections.indexOf(e.target);
+      if (idx > -1) links[idx].classList.add('active');
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  sections.forEach(function (s) { if (s) spy.observe(s); });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
